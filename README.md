@@ -13,6 +13,13 @@ are synthetic examples, not measured equipment performance.
 [Example gallery](https://julianascencio.github.io/x2power-simulator/gallery/index.html) ·
 [API reference](https://julianascencio.github.io/x2power-simulator/reference/index.html)
 
+## AI-generated content
+
+Most of the code, examples and documentation in this repository are AI-generated,
+based on specific, real scientific and technical literature selected by the
+repository developers. The developers guide source selection, implementation,
+review and validation.
+
 ## Quick start
 
 ```bash

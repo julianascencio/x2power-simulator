@@ -6,6 +6,13 @@ X2Power models combustion, gasification, pyrolysis, anaerobic digestion, organic
 wastewater and biogas generation. It exposes the assumptions behind gross and net
 electricity, process heat, auxiliary loads, generator capacity and availability.
 
+## AI-generated content
+
+Most of the code, examples and documentation in this repository are AI-generated,
+based on specific, real scientific and technical literature selected by the
+repository developers. The developers guide source selection, implementation,
+review and validation.
+
 ## Start here
 
 - **[User guide](user_guide/index.md):** install the package and run a first simulation.
