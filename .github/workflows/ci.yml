@@ -21,7 +21,7 @@ jobs:
       - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7
         with:
           python-version: ${{ matrix.python-version }}
-      - run: python -m pip install -e '.[dev]'
+      - run: python -m pip install -e '.[dev,plots]'
       - run: pytest --cov=x2power --cov-report=term-missing
 
   quality:
@@ -33,7 +33,7 @@ jobs:
       - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7
         with:
           python-version: '3.11'
-      - run: python -m pip install -e '.[dev]'
+      - run: python -m pip install -e '.[dev,plots]'
       - run: ruff check .
       - run: ruff format --check .
       - run: ty check src use_cases
@@ -44,3 +44,4 @@ jobs:
           /tmp/x2power-wheel/bin/python -m pip install dist/*.whl
           /tmp/x2power-wheel/bin/x2power --version
           /tmp/x2power-wheel/bin/x2power run use_cases/scenarios/biogas_engine.json
+          /tmp/x2power-wheel/bin/python -c "import importlib.util; assert importlib.util.find_spec('matplotlib') is None"

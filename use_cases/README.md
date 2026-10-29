@@ -10,6 +10,11 @@ to `results/` under the current working directory.
 | `python use_cases/moisture_sweep.py` | Vary gasification feed moisture at constant wet mass | `moisture_sweep.csv` |
 | `python use_cases/operating_profile.py` | Vary biogas flow and include a generator outage | `operating_profile.json` |
 | `python use_cases/uncertainty.py` | Seeded independent uniform sampling of digestion parameters | `uncertainty.json` |
+| `python use_cases/visual_report.py` | Four technical figures with all inputs and numerical outputs retained | `visual_report/` |
+
+The visual example requires `python -m pip install -e '.[plots]'`. It saves PNG and
+SVG figures, two CSV tables and a JSON record of inputs, settings and results.
+Change its destination with `--output-dir PATH`. See [the plotting guide](../docs/plotting.md).
 
 The comparison demonstrates the shared output interface. The feeds and scales differ,
 so its rows do not constitute a ranking of conversion technologies.

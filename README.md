@@ -4,7 +4,8 @@ A Python simulator for converting solid feedstocks, biogas and organic wastewate
 into electricity. It calculates gross generation, net electricity, process heat,
 auxiliary consumption and capacity constraints using explicit energy balances.
 
-The package has **no runtime dependencies** and requires **Python 3.11 or newer**.
+The simulation core has **no runtime dependencies** and requires **Python 3.11 or newer**.
+Install the optional `plots` extra for Matplotlib figures.
 Models are reduced-order, interval-based calculations. All bundled scenario inputs
 are synthetic examples, not measured equipment performance.
 
@@ -95,6 +96,21 @@ python use_cases/uncertainty.py
 Outputs are written to `results/` in the current working directory. See the
 [use-case guide](use_cases/README.md) for what each experiment measures.
 
+## Plot simulation results
+
+```bash
+python -m pip install -e '.[plots]'
+x2power plot use_cases/scenarios/biomass_gasification.json -o results/energy_balance.png
+python use_cases/visual_report.py
+```
+
+The worked example writes electricity/heat, moisture sensitivity, operating profile
+and uncertainty figures as PNG and SVG. Its JSON output retains the scenario inputs,
+experiment settings, seed, sample draws and numerical results. CSV tables expose
+the sensitivity sweep and interval powers. See [the plotting guide](docs/plotting.md).
+
+![Synthetic moisture sensitivity example](docs/figures/moisture_sensitivity.svg)
+
 ## Model boundaries
 
 - Input masses and volumes are **totals over the simulation interval**, not rates.
@@ -116,7 +132,7 @@ Read [equations and boundaries](docs/models.md), the
 ## Development
 
 ```bash
-python -m pip install -e '.[dev]'
+python -m pip install -e '.[dev,plots]'
 ruff check .
 ruff format --check .
 ty check src use_cases

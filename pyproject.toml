@@ -17,6 +17,7 @@ classifiers = [
 ]
 
 [project.optional-dependencies]
+plots = ["matplotlib>=3.8"]
 dev = ["pytest>=8", "pytest-cov>=6", "ruff>=0.11", "ty>=0.0.1", "build>=1.2"]
 
 [project.scripts]

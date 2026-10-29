@@ -12,6 +12,9 @@
 - Consistent interval aggregation, deterministic seeded sampling and immutable
   source scenarios during experiments.
 - Executable example scripts, CLI JSON/CSV output and package entry points.
+- Plot data preserve signed net electricity, heater input versus delivered heat and
+  unequal interval durations. PNG/SVG/PDF files render, the worked example reproduces
+  its numerical outputs, and core simulation runs without the plotting dependency.
 
 These are software verification checks. They do not establish empirical accuracy.
 All seven included scenarios use synthetic parameters and must be calibrated before

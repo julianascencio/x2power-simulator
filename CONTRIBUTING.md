@@ -1,7 +1,7 @@
 # Contributing
 
 Keep changes focused on technical simulation, numerical methods and reproducible
-examples. Install the development tools with `python -m pip install -e '.[dev]'`.
+examples. Install the development tools with `python -m pip install -e '.[dev,plots]'`.
 
 For a new model or an equation change:
 

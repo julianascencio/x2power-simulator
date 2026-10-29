@@ -1,4 +1,4 @@
-"""Command-line scenario execution and comparison."""
+"""Command-line scenario execution, comparison and optional plotting."""
 
 import argparse
 import json
@@ -22,6 +22,9 @@ def main(argv: list[str] | None = None) -> int:
     )
     compare.add_argument("scenarios", type=Path, nargs="+")
     compare.add_argument("--csv", type=Path)
+    plot = commands.add_parser("plot", help="Plot electricity and heat for one scenario")
+    plot.add_argument("scenario", type=Path)
+    plot.add_argument("-o", "--output", type=Path, required=True)
     args = parser.parse_args(argv)
     try:
         if args.command == "run":
@@ -30,6 +33,13 @@ def main(argv: list[str] | None = None) -> int:
                 write_json(result, args.output)
             else:
                 print(json.dumps(result, indent=2, allow_nan=False))
+        elif args.command == "plot":
+            from x2power.utilities.plotting import plot_energy_balance, save_figure
+
+            config = load_scenario(args.scenario)
+            result = run_scenario(config)
+            figure = plot_energy_balance(result, title=str(config.get("name", args.scenario.stem)))
+            save_figure(figure, args.output)
         else:
             rows = []
             for path in args.scenarios:
@@ -49,7 +59,7 @@ def main(argv: list[str] | None = None) -> int:
                 write_csv(rows, args.csv)
             else:
                 print(json.dumps(rows, indent=2, allow_nan=False))
-    except (ValueError, OSError, TypeError) as exc:
+    except (ValueError, OSError, TypeError, ImportError) as exc:
         print(f"x2power: {exc}", file=sys.stderr)
         return 2
     return 0
