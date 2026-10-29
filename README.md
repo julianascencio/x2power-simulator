@@ -9,6 +9,10 @@ Install the optional `plots` extra for Matplotlib figures.
 Models are reduced-order, interval-based calculations. All bundled scenario inputs
 are synthetic examples, not measured equipment performance.
 
+**[Documentation](https://julianascencio.github.io/x2power-simulator/)** ·
+[Example gallery](https://julianascencio.github.io/x2power-simulator/gallery/index.html) ·
+[API reference](https://julianascencio.github.io/x2power-simulator/reference/index.html)
+
 ## Quick start
 
 ```bash
@@ -143,3 +147,13 @@ python -m build
 CI runs the tests on Python 3.11–3.14 and checks formatting, static types and package
 builds. The coverage threshold is 85%, including branches. See
 [CONTRIBUTING.md](CONTRIBUTING.md) for model contribution requirements.
+
+Build the Sphinx documentation and execute the gallery locally:
+
+```bash
+python -m pip install -e '.[docs]'
+sphinx-build -W --keep-going -b html docs docs/_build/html
+```
+
+GitHub Actions validates documentation on pull requests and publishes successful
+builds from `main` to GitHub Pages. See [documentation development](docs/development.md).
