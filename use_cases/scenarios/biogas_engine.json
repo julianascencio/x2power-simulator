@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "duration_h": 24.0,
+  "availability": 0.95,
+  "description": "Synthetic illustrative parameters; not measured equipment performance.",
+  "name": "biogas_engine",
+  "generator": {
+    "electrical_efficiency": 0.35,
+    "heat_recovery_efficiency": 0.4,
+    "rated_power_kw": 500.0
+  },
+  "auxiliaries": {
+    "fixed_power_kw": 3.0,
+    "electricity_fraction_of_gross": 0.04,
+    "process_electricity_kwh": 20.0,
+    "electric_heater_efficiency": 0.95,
+    "process_heat_usable_fraction": 0.8
+  },
+  "route": "biogas",
+  "feedstock": {
+    "volume_nm3": 2000.0,
+    "methane_fraction": 0.6,
+    "methane_lhv_kwh_per_nm3": 9.94,
+    "capture_fraction": 1.0
+  },
+  "process": {
+    "process_heat_kwh": 300.0
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "duration_h": 24.0,
+  "availability": 0.95,
+  "description": "Synthetic illustrative parameters; not measured equipment performance.",
+  "name": "biomass_combustion",
+  "generator": {
+    "electrical_efficiency": 0.25,
+    "heat_recovery_efficiency": 0.4,
+    "rated_power_kw": 500.0
+  },
+  "auxiliaries": {
+    "fixed_power_kw": 3.0,
+    "electricity_fraction_of_gross": 0.04,
+    "process_electricity_kwh": 20.0,
+    "electric_heater_efficiency": 0.95,
+    "process_heat_usable_fraction": 0.8
+  },
+  "route": "combustion",
+  "feedstock": {
+    "mass_kg": 4000.0,
+    "moisture_fraction": 0.2,
+    "dry_lhv_mj_per_kg": 18.0
+  },
+  "process": {
+    "fuel_energy_recovery": 0.85,
+    "evaporation_heat_kwh_per_kg_water": 0.75,
+    "process_heat_kwh_per_kg_dry": 0.0
+  }
+}
