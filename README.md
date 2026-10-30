@@ -49,13 +49,24 @@ route scenarios and continuous-plant presets are synthetic illustrative inputs.
 Source-backed analyses separately identify published measurements, assumptions
 and simulated results; cited laboratory data do not validate plant performance.
 
-Trace assumptions through the [model references](docs/models.md),
-[biogas plant references](docs/biogas_plants.md) and
-[plastic example boundaries](docs/plastic_to_power.md). See
-[verification and calibration](docs/validation.md) for the evidence available and
+Trace assumptions through the [model references](https://github.com/julianascencio/x2power-simulator/blob/main/docs/models.md),
+[biogas plant references](https://github.com/julianascencio/x2power-simulator/blob/main/docs/biogas_plants.md) and
+[plastic example boundaries](https://github.com/julianascencio/x2power-simulator/blob/main/docs/plastic_to_power.md). See
+[verification and calibration](https://github.com/julianascencio/x2power-simulator/blob/main/docs/validation.md) for the evidence available and
 the checks needed before interpreting results as equipment predictions.
 
 ## Quick start
+
+Install the published package from PyPI:
+
+```bash
+python -m pip install x2power-simulator
+x2power --version
+```
+
+For optional plotting, install `"x2power-simulator[plots]"`. The wheel provides the
+`x2power` Python package and CLI. The scenario files, runnable analyses and gallery
+sources are in the repository and source distribution. To run those examples:
 
 ```bash
 git clone https://github.com/julianascencio/x2power-simulator.git
@@ -124,8 +135,8 @@ fraction only when the available heat matches the required temperature and duty.
 
 | Folder | Purpose |
 | --- | --- |
-| [`src/x2power/methods/`](src/x2power/methods) | Conversion models, shared generation model and operating profiles |
-| [`src/x2power/utilities/`](src/x2power/utilities) | Validation, unit conversions, JSON/CSV, sweeps and Monte Carlo experiments |
+| [`src/x2power/methods/`](https://github.com/julianascencio/x2power-simulator/blob/main/src/x2power/methods) | Conversion models, shared generation model and operating profiles |
+| [`src/x2power/utilities/`](https://github.com/julianascencio/x2power-simulator/blob/main/src/x2power/utilities) | Validation, unit conversions, JSON/CSV, sweeps and Monte Carlo experiments |
 | [`use_cases/`](use_cases) | Runnable examples, seven route scenarios and three continuous plant configurations |
 | [`analysis/`](analysis) | Reproducible source-backed cases, cost-benefit screening and pinned results |
 | [`tests/`](tests) | Hand-calculated cases, conservation checks, limiting cases and CLI integration |
@@ -141,7 +152,7 @@ python use_cases/uncertainty.py
 ```
 
 Outputs are written to `results/` in the current working directory. See the
-[use-case guide](use_cases/README.md) for what each experiment measures.
+[use-case guide](https://github.com/julianascencio/x2power-simulator/blob/main/use_cases/README.md) for what each experiment measures.
 
 ## Plot simulation results
 
@@ -154,9 +165,9 @@ python use_cases/visual_report.py
 The worked example writes electricity/heat, moisture sensitivity, operating profile
 and uncertainty figures as PNG and SVG. Its JSON output retains the scenario inputs,
 experiment settings, seed, sample draws and numerical results. CSV tables expose
-the sensitivity sweep and interval powers. See [the plotting guide](docs/plotting.md).
+the sensitivity sweep and interval powers. See [the plotting guide](https://github.com/julianascencio/x2power-simulator/blob/main/docs/plotting.md).
 
-![Synthetic moisture sensitivity example](docs/figures/moisture_sensitivity.svg)
+![Synthetic moisture sensitivity example](https://raw.githubusercontent.com/julianascencio/x2power-simulator/main/docs/figures/moisture_sensitivity.svg)
 
 ## Plastic to electricity
 
@@ -168,7 +179,7 @@ The synthetic example follows 2 tonnes of wet feed over 24 hours through pyrolys
 fuel recovery and electricity generation, including process heat and auxiliaries.
 It exports three figures, two sensitivity tables and a full JSON result. Install
 the `plots` extra for figures, or omit `--plot` for a dependency-free run.
-See the [guide](docs/plastic_to_power.md) and
+See the [guide](https://github.com/julianascencio/x2power-simulator/blob/main/docs/plastic_to_power.md) and
 [step-by-step gallery](https://julianascencio.github.io/x2power-simulator/gallery/plot_06_plastic_to_power.html).
 
 ## Continuous biogas plants
@@ -183,7 +194,7 @@ python use_cases/biogas_plant.py --plant agroindustrial_chp --days 30 --plot
 
 Install the `plots` extra for figures. The example records substrate/gas inventories,
 net electricity, grid imports/exports, flaring and heat demand in JSON/CSV.
-See the [plant model and assumptions](docs/biogas_plants.md) and
+See the [plant model and assumptions](https://github.com/julianascencio/x2power-simulator/blob/main/docs/biogas_plants.md) and
 [step-by-step gallery](https://julianascencio.github.io/x2power-simulator/gallery/plot_05_biogas_plant.html).
 
 ## Source-backed banana-residue analysis
@@ -200,7 +211,7 @@ negative under its stated assumptions; it is not an operating-plant reconstructi
 
 Reusable financial functions live in `src/x2power/methods/cost_benefit.py`; the
 offline workflow and pinned numeric results are under `analysis/tenerife_banana/`.
-See the [evidence and reproduction guide](docs/tenerife_banana.md) and
+See the [evidence and reproduction guide](https://github.com/julianascencio/x2power-simulator/blob/main/docs/tenerife_banana.md) and
 [results gallery](https://julianascencio.github.io/x2power-simulator/gallery/plot_07_tenerife_banana.html).
 
 ## Route model boundaries
@@ -219,9 +230,9 @@ See the [evidence and reproduction guide](docs/tenerife_banana.md) and
   Monte Carlo quantiles describe
   the chosen input distributions, not calibrated confidence intervals.
 
-Read [equations and boundaries](docs/models.md), the
-[scenario reference](docs/scenarios.md) and
-[validation guidance](docs/validation.md) before adapting a scenario.
+Read [equations and boundaries](https://github.com/julianascencio/x2power-simulator/blob/main/docs/models.md), the
+[scenario reference](https://github.com/julianascencio/x2power-simulator/blob/main/docs/scenarios.md) and
+[validation guidance](https://github.com/julianascencio/x2power-simulator/blob/main/docs/validation.md) before adapting a scenario.
 
 ## Development
 
@@ -236,7 +247,7 @@ python -m build
 
 CI runs the tests on Python 3.11–3.14 and checks formatting, static types and package
 builds. The coverage threshold is 85%, including branches. See
-[CONTRIBUTING.md](CONTRIBUTING.md) for model contribution requirements.
+[CONTRIBUTING.md](https://github.com/julianascencio/x2power-simulator/blob/main/CONTRIBUTING.md) for model contribution requirements.
 
 Build the Sphinx documentation and execute the gallery locally:
 
@@ -246,7 +257,7 @@ sphinx-build -W --keep-going -b html docs docs/_build/html
 ```
 
 GitHub Actions validates documentation on pull requests and publishes successful
-builds from `main` to GitHub Pages. See [documentation development](docs/development.md).
+builds from `main` to GitHub Pages. See [documentation development](https://github.com/julianascencio/x2power-simulator/blob/main/docs/development.md).
 
 ## Creator and contact
 

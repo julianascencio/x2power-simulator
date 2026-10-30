@@ -56,3 +56,32 @@ ty check src use_cases analysis
 pytest --cov=x2power --cov-report=term-missing
 sphinx-build -W --keep-going -b html docs docs/_build/html
 ```
+
+
+## Publishing a release
+
+`.github/workflows/release.yml` uses the same token-based PyPI publishing pattern
+as OrbitalPV. It builds the wheel and source distribution, checks package metadata,
+runs lint/type/coverage checks, and verifies a dependency-free clean wheel install
+before uploading the exact validated artifacts.
+
+Configure `PYPI_API_TOKEN` as an Actions secret for this repository or its `pypi`
+environment. Secrets from `orbital-pv` are not automatically available here. The
+initial upload requires a PyPI token authorized to create `x2power-simulator`;
+a token restricted to `orbital-pv` cannot publish this project. After the first
+upload, use a token scoped to `x2power-simulator`. Never commit a token.
+
+For subsequent versions:
+
+1. Update the version in `pyproject.toml` and `src/x2power/__init__.py` together.
+2. Merge the tested release changes into `main`.
+3. Push a tag `v<version>` or publish a GitHub release with that tag. The workflow
+   rejects tags that do not match the package version.
+4. Confirm the PyPI upload job succeeds and install the version from PyPI in a
+   fresh environment.
+
+The workflow can also be run manually from `main` or a matching version tag.
+The `.pypi-initial-release` marker triggers the first upload when merged into
+`main`; ordinary code pushes do not publish packages. Existing filenames are
+skipped to allow retrying a partial upload, but PyPI cannot replace an uploaded
+file. Any changed distribution needs a new version.
