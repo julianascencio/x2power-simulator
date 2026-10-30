@@ -9,6 +9,7 @@ inputs, equations and visual analysis.
 getting_started
 ../models
 ../biogas_plants
+../plastic_to_power
 ../scenarios
 ../plotting
 ../validation

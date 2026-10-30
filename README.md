@@ -122,6 +122,19 @@ the sensitivity sweep and interval powers. See [the plotting guide](docs/plottin
 
 ![Synthetic moisture sensitivity example](docs/figures/moisture_sensitivity.svg)
 
+## Plastic to electricity
+
+```bash
+python use_cases/plastic_to_power.py --plot
+```
+
+The synthetic example follows 2 tonnes of wet feed over 24 hours through pyrolysis
+fuel recovery and electricity generation, including process heat and auxiliaries.
+It exports three figures, two sensitivity tables and a full JSON result. Install
+the `plots` extra for figures, or omit `--plot` for a dependency-free run.
+See the [guide](docs/plastic_to_power.md) and
+[step-by-step gallery](https://julianascencio.github.io/x2power-simulator/gallery/plot_06_plastic_to_power.html).
+
 ## Continuous biogas plants
 
 Simulate mixed organic feeds, a continuously stirred digester, gas storage and
