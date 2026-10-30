@@ -91,7 +91,7 @@ fraction only when the available heat matches the required temperature and duty.
 | --- | --- |
 | [`src/x2power/methods/`](src/x2power/methods) | Conversion models, shared generation model and operating profiles |
 | [`src/x2power/utilities/`](src/x2power/utilities) | Validation, unit conversions, JSON/CSV, sweeps and Monte Carlo experiments |
-| [`use_cases/`](use_cases) | Runnable examples and seven editable JSON scenarios |
+| [`use_cases/`](use_cases) | Runnable examples, seven route scenarios and three continuous plant configurations |
 | [`tests/`](tests) | Hand-calculated cases, conservation checks, limiting cases and CLI integration |
 | [`docs/`](docs) | Equations, configuration reference, assumptions and validation guidance |
 
@@ -122,7 +122,22 @@ the sensitivity sweep and interval powers. See [the plotting guide](docs/plottin
 
 ![Synthetic moisture sensitivity example](docs/figures/moisture_sensitivity.svg)
 
-## Model boundaries
+## Continuous biogas plants
+
+Simulate mixed organic feeds, a continuously stirred digester, gas storage and
+CHP with hourly operating schedules. Includes generic agroindustrial, dairy-manure
+and swine-slurry configurations, all with synthetic inputs.
+
+```bash
+python use_cases/biogas_plant.py --plant agroindustrial_chp --days 30 --plot
+```
+
+Install the `plots` extra for figures. The example records substrate/gas inventories,
+net electricity, grid imports/exports, flaring and heat demand in JSON/CSV.
+See the [plant model and assumptions](docs/biogas_plants.md) and
+[step-by-step gallery](https://julianascencio.github.io/x2power-simulator/gallery/plot_05_biogas_plant.html).
+
+## Route model boundaries
 
 - Input masses and volumes are **totals over the simulation interval**, not rates.
 - Heating values and conversion efficiencies use the **lower heating value (LHV)** basis.
@@ -133,7 +148,9 @@ the sensitivity sweep and interval powers. See [the plotting guide](docs/plottin
   electric resistance heater and deducted from net electricity.
 - Energy closure is checked at the generator boundary. No detailed reaction,
   product-speciation, emissions, gas-cleaning or reactor-kinetics model is included.
-- Profiles combine independent steady intervals. Monte Carlo quantiles describe
+- The original route profiles combine independent steady intervals. The continuous
+  biogas plant module separately tracks substrate and gas inventories.
+  Monte Carlo quantiles describe
   the chosen input distributions, not calibrated confidence intervals.
 
 Read [equations and boundaries](docs/models.md), the

@@ -37,10 +37,19 @@ their outputs can be interpreted as a prediction of specific equipment.
    uncertainty; examine sensitivity and correlated inputs before interpreting
    Monte Carlo quantiles.
 
+## Continuous biogas plant verification
+
+The [continuous plant model](biogas_plants.md) has independent analytical checks
+for steady and transient first-order substrate pools, VS/gas conservation, stored-gas
+release after outages, heating loads and grid import/export accounting. Restarted
+simulations preserve state, and zero-feed cases retain residual gas production.
+These checks establish numerical consistency, not empirical plant performance.
+
 ## Extension boundaries
 
 Detailed reactor kinetics, chemical equilibrium, tar/contaminant handling,
-part-load efficiency curves, storage dispatch, transient startup, product mass
-balances and emissions require additional models. Add each as an explicit module
+part-load efficiency curves, microbial startup, full product mass balances and
+emissions require additional models. The continuous plant module adds simple
+gas-holder dispatch and first-order substrate transients with explicit limitations. Add each as an explicit module
 with its own boundary and reference cases rather than embedding undocumented
 corrections in the existing recovery factors.

@@ -8,6 +8,7 @@ inputs, equations and visual analysis.
 
 getting_started
 ../models
+../biogas_plants
 ../scenarios
 ../plotting
 ../validation

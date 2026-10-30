@@ -1,8 +1,9 @@
 API reference
 =============
 
-This reference is generated from the installed Python package. Input amounts are
-interval totals, and energy/power units are explicit in field and argument names.
+This reference is generated from the installed Python package. Route-model inputs
+are interval totals; continuous plant feedstocks use daily rates. Energy/power
+units are explicit in field and argument names.
 
 .. toctree::
    :maxdepth: 1
@@ -11,6 +12,7 @@ interval totals, and energy/power units are explicit in field and argument names
    conversion
    scenarios
    profiles
+   biogas_plants
    experiments
    utilities
    plotting

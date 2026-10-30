@@ -1,5 +1,8 @@
 # Equations and model boundaries
 
+This page describes the original independent route models. For stateful substrate
+pools and gas storage, see [continuous biogas plants](biogas_plants.md).
+
 All energies below are in kWh unless stated otherwise. Feed amounts, gas volumes
 and electrical loads refer to one interval of duration `t` hours. Efficiencies are
 dimensionless fractions on an LHV basis. These models expose assumptions; they do
