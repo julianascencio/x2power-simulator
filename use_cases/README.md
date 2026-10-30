@@ -10,6 +10,7 @@ to `results/` under the current working directory.
 | `python use_cases/moisture_sweep.py` | Vary gasification feed moisture at constant wet mass | `moisture_sweep.csv` |
 | `python use_cases/operating_profile.py` | Vary biogas flow and include a generator outage | `operating_profile.json` |
 | `python use_cases/uncertainty.py` | Seeded independent uniform sampling of digestion parameters | `uncertainty.json` |
+| `python use_cases/plastic_to_power.py --plot` | Plastic pyrolysis electricity/heat balance, recovery and throughput sweeps | `plastic_to_power/` |
 | `python use_cases/biogas_plant.py --plant agroindustrial_chp --days 30 --plot` | Continuous digestion, gas storage, CHP outage and feed interruption | `biogas_plant/agroindustrial_chp/` |
 | `python use_cases/visual_report.py` | Four technical figures with all inputs and numerical outputs retained | `visual_report/` |
 
@@ -51,3 +52,10 @@ See [the scenario reference](../docs/scenarios.md) for units and parameter meani
 `--plant` argument. These files use a dedicated plant schema and are not inputs
 for `x2power run`. Omit `--plot` to keep the run dependency-free.
 See [the plant guide](../docs/biogas_plants.md) for parameter definitions and limitations.
+
+## Plastic-to-power example
+
+`python use_cases/plastic_to_power.py --plot` uses the existing plastic pyrolysis
+scenario to export three figures (PNG/SVG), two CSV tables and a JSON record of
+inputs and results. Omit `--plot` to run without Matplotlib. All values are synthetic.
+See the [plastic-to-electricity guide](../docs/plastic_to_power.md).

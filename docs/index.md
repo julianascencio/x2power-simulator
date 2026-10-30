@@ -23,6 +23,9 @@ review and validation.
 **[Continuous biogas plants](biogas_plants.md):** mixed feeds, substrate inventories,
 gas storage, CHP outages, process heat and grid imports/exports.
 
+**[Plastic to electricity](plastic_to_power.md):** a worked pyrolysis example with
+process heating, auxiliary consumption and generator-capacity sensitivity.
+
 ## What can you simulate?
 
 | Input | Method | Main outputs |
