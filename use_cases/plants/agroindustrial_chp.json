@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "model": "continuous_biogas_plant",
+  "name": "agroindustrial_chp",
+  "assumptions": [
+    "Synthetic engineering example; not measured plant data.",
+    "All feed properties, kinetics, sizing and efficiencies require calibration.",
+    "One equivalent fully mixed digester; no inhibition, pH or microbial startup model.",
+    "Fixed temperature with unlimited electric backup heating; no thermal storage.",
+    "Dry normal gas volumes at 0 C and 101325 Pa; constant methane fraction."
+  ],
+  "plant": {
+    "feedstocks": [
+      {
+        "name": "food_processing_residues",
+        "wet_mass_kg_per_day": 45000,
+        "total_solids_fraction": 0.22,
+        "volatile_solids_fraction_ts": 0.9,
+        "biodegradable_vs_fraction": 0.85,
+        "methane_yield_nm3_per_kg_vs_destroyed": 0.55,
+        "decay_rate_per_day": 0.12,
+        "density_kg_per_m3": 1000,
+        "dry_lhv_mj_per_kg": 20
+      },
+      {
+        "name": "livestock_slurry",
+        "wet_mass_kg_per_day": 35000,
+        "total_solids_fraction": 0.08,
+        "volatile_solids_fraction_ts": 0.8,
+        "biodegradable_vs_fraction": 0.65,
+        "methane_yield_nm3_per_kg_vs_destroyed": 0.45,
+        "decay_rate_per_day": 0.06,
+        "density_kg_per_m3": 1000,
+        "dry_lhv_mj_per_kg": 20
+      },
+      {
+        "name": "organic_sludge",
+        "wet_mass_kg_per_day": 20000,
+        "total_solids_fraction": 0.06,
+        "volatile_solids_fraction_ts": 0.75,
+        "biodegradable_vs_fraction": 0.65,
+        "methane_yield_nm3_per_kg_vs_destroyed": 0.48,
+        "decay_rate_per_day": 0.08,
+        "density_kg_per_m3": 1000,
+        "dry_lhv_mj_per_kg": 20
+      }
+    ],
+    "digester": {
+      "working_volume_m3": 3500,
+      "temperature_c": 37,
+      "heat_loss_kw_per_k": 0.55,
+      "minimum_hrt_days": 15,
+      "maximum_olr_kg_vs_m3_day": 5
+    },
+    "generator": {
+      "electrical_efficiency": 0.38,
+      "heat_recovery_efficiency": 0.45,
+      "rated_power_kw": 1000
+    },
+    "gas_storage_capacity_nm3": 2500,
+    "methane_fraction": 0.6,
+    "capture_fraction": 0.98,
+    "fixed_auxiliary_power_kw": 20.0,
+    "mixing_power_w_per_m3": 3,
+    "feed_preparation_kwh_per_tonne": 2,
+    "gas_treatment_kwh_per_nm3": 0.02,
+    "electric_heater_efficiency": 0.98
+  }
+}

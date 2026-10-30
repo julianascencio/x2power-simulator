@@ -20,6 +20,9 @@ review and validation.
 - **[API reference](reference/index.rst):** explore inputs, methods and utilities generated from Python code.
 - **[Model equations](models.md):** understand energy boundaries, units and physical limitations.
 
+**[Continuous biogas plants](biogas_plants.md):** mixed feeds, substrate inventories,
+gas storage, CHP outages, process heat and grid imports/exports.
+
 ## What can you simulate?
 
 | Input | Method | Main outputs |

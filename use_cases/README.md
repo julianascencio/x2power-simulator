@@ -10,6 +10,7 @@ to `results/` under the current working directory.
 | `python use_cases/moisture_sweep.py` | Vary gasification feed moisture at constant wet mass | `moisture_sweep.csv` |
 | `python use_cases/operating_profile.py` | Vary biogas flow and include a generator outage | `operating_profile.json` |
 | `python use_cases/uncertainty.py` | Seeded independent uniform sampling of digestion parameters | `uncertainty.json` |
+| `python use_cases/biogas_plant.py --plant agroindustrial_chp --days 30 --plot` | Continuous digestion, gas storage, CHP outage and feed interruption | `biogas_plant/agroindustrial_chp/` |
 | `python use_cases/visual_report.py` | Four technical figures with all inputs and numerical outputs retained | `visual_report/` |
 
 The visual example requires `python -m pip install -e '.[plots]'`. It saves PNG and
@@ -42,3 +43,11 @@ describe the specified input distributions. They do not quantify empirical accur
 Every value is illustrative. The thermal examples set heat usability explicitly;
 do not transfer the assumptions to equipment without checking temperature levels.
 See [the scenario reference](../docs/scenarios.md) for units and parameter meanings.
+
+## Continuous plant configurations
+
+`plants/` contains three synthetic plant configurations: `agroindustrial_chp`,
+`dairy_manure_chp` and `swine_slurry_chp`. Select one with the runner
+`--plant` argument. These files use a dedicated plant schema and are not inputs
+for `x2power run`. Omit `--plot` to keep the run dependency-free.
+See [the plant guide](../docs/biogas_plants.md) for parameter definitions and limitations.

@@ -23,7 +23,7 @@ python -m http.server 8000 --directory docs/_build/html
 ```
 
 Open `http://localhost:8000/`. The documentation uses Sphinx, the PyData theme,
-MyST Markdown and Sphinx-Gallery. The gallery executes all four example scripts,
+MyST Markdown and Sphinx-Gallery. The gallery executes the example scripts,
 captures their figures and produces downloadable Python files and notebooks.
 API pages import the installed package, so rebuild after changing signatures or
 docstrings. Warnings and failed examples make the documentation build fail.
