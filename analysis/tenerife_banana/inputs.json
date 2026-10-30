@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "case_name": "Tenerife banana pseudostems: electricity feasibility screening",
+  "evidence_checked_on": "2026-10-30",
+  "region_context": {
+    "island": "Tenerife",
+    "banana_fruit_production_year": 2024,
+    "banana_fruit_production_tonnes": 186771,
+    "source_id": "ces_2024",
+    "use": "Context only. Fruit production is not residue availability or contracted feed."
+  },
+  "feedstock_measurements": {
+    "total_solids_fraction_wet": 0.062,
+    "volatile_solids_fraction_ts": 0.678,
+    "methane_potential_nm3_per_kg_vs_fed": 0.36329,
+    "source_id": "duran_2026",
+    "sample_location": "Galdar, Gran Canaria; laboratory assays in Madrid",
+    "transfer_limit": "Adjacent-island proxy, not a Tenerife feedstock measurement. Raw pseudostem only; excludes fruit, rachis and leaves."
+  },
+  "assumptions": {
+    "feed_tonnes_per_year": 5000.0,
+    "bmp_realization_fraction": 0.7,
+    "dry_lhv_mj_per_kg": 15.0,
+    "methane_fraction": 0.6,
+    "methane_capture_fraction": 0.98,
+    "methane_lhv_kwh_per_nm3": 9.94,
+    "generator_rating_kw": 50.0,
+    "electrical_efficiency": 0.3,
+    "heat_recovery_efficiency": 0.45,
+    "digester_temperature_c": 37.0,
+    "feed_temperature_c": 20.0,
+    "ambient_temperature_c": 20.0,
+    "feed_heat_capacity_kj_per_kg_k": 4.18,
+    "digester_working_volume_m3": 600.0,
+    "feed_density_kg_per_m3": 1000.0,
+    "heat_loss_kw_per_k": 0.15,
+    "fixed_auxiliary_power_kw": 0.5,
+    "mixing_power_w_per_m3": 3.0,
+    "feed_preparation_kwh_per_tonne": 5.0,
+    "electricity_fraction_of_gross": 0.05,
+    "electric_heater_efficiency": 0.98,
+    "process_heat_usable_fraction": 1.0,
+    "chp_outage_day_ranges": [[151, 165], [321, 335]],
+    "self_consumption_fraction": 0.0,
+    "avoided_purchase_price_eur_per_kwh": 0.18,
+    "export_price_eur_per_kwh": 0.07,
+    "import_price_eur_per_kwh": 0.18,
+    "gate_fee_eur_per_tonne": 0.0,
+    "collection_eur_per_tonne": 8.0,
+    "transport_loaded_distance_km": 20.0,
+    "transport_eur_per_tonne_km": 0.18,
+    "residue_handling_eur_per_feed_tonne": 6.0,
+    "horizon_years": 20,
+    "real_discount_rate": 0.08,
+    "replacement_year": 10,
+    "replacement_cost_eur": 40000.0,
+    "decommissioning_cost_eur": 30000.0,
+    "salvage_value_eur": 0.0
+  },
+  "capital_costs_eur": {
+    "receiving_and_shredding": 60000.0,
+    "digester_and_civil_works": 320000.0,
+    "gas_treatment_and_safety": 50000.0,
+    "chp_and_heat_recovery": 50000.0,
+    "electrical_connection": 60000.0,
+    "engineering_and_contingency": 110000.0
+  },
+  "annual_fixed_costs_eur": {
+    "labour_and_monitoring": 25000.0,
+    "maintenance": 19500.0,
+    "insurance_and_administration": 6500.0
+  },
+  "financial_basis": "Assumed constant 2026 EUR, unlevered and pre-tax. No supplier quotations, market-price forecast, grant, tax, debt, land purchase or heat/digestate/carbon sales. Transport rate is assumed to include the empty return; loaded distance is one-way. Residue handling is charged per incoming tonne, not a predicted digestate mass. No disposal saving is claimed for material otherwise retained on farms.",
+  "sources": {
+    "ces_2024": {
+      "title": "Consejo Economico y Social de Canarias, Informe Anual 2024",
+      "url": "https://www.cescanarias.es/?wpdmdl=470",
+      "locator": "Table 40, printed page 86 (PDF page 88), Tenerife 2024 row; source attributed to ASPROCAN",
+      "role": "Published island production context; this pinned 2024 series is not represented as the latest production estimate."
+    },
+    "duran_2026": {
+      "title": "Duran Hernandez et al. (2026), Methane production from the co-digestion of banana crop residues and the organic fraction of municipal solid waste: influence of steam explosion",
+      "doi": "10.1186/s13068-026-02794-y",
+      "url": "https://link.springer.com/article/10.1186/s13068-026-02794-y",
+      "pdf_url": "https://link.springer.com/content/pdf/10.1186/s13068-026-02794-y_reference.pdf",
+      "locator": "Accepted manuscript: section 2.1; Table 3 raw P (PDF page 19); Table 6 P (PDF page 24); section 2.3 gas reference conditions",
+      "role": "Raw pseudostem TS, VS/TS and blank-corrected laboratory BMP. Not a continuous-plant guarantee; no steam-explosion uplift applied."
+    },
+    "nrel_sam": {
+      "title": "NREL, LCOE in SAM using FCR and Single Owner Financial Models (2020)",
+      "url": "https://sam.nrel.gov/images/web_page_files/sam-lcoe-fcr-vs-cash-flow.pdf",
+      "role": "Discounted lifecycle cost/energy convention only. This example does not implement SAM financing or tax treatment and obtains no cost assumptions from this source."
+    }
+  }
+}

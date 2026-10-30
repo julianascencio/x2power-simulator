@@ -5,6 +5,7 @@ import tomllib
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))  # repository analysis modules used by the gallery
 sys.path.insert(0, str(ROOT / "docs" / "_ext"))
 
 with (ROOT / "pyproject.toml").open("rb") as source:

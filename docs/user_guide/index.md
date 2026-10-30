@@ -10,6 +10,8 @@ getting_started
 ../models
 ../biogas_plants
 ../plastic_to_power
+../tenerife_banana
+../cost_benefit
 ../scenarios
 ../plotting
 ../validation

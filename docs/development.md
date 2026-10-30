@@ -7,7 +7,8 @@
 | `src/x2power/methods/` | Conversion equations and operating profiles |
 | `src/x2power/utilities/` | Validation, file handling, experiments and plotting |
 | `use_cases/` | JSON scenarios and runnable analysis scripts |
-| `use_cases/gallery/` | Self-contained scripts executed during documentation builds |
+| `use_cases/gallery/` | Worked scripts executed during documentation builds |
+| `analysis/` | Offline source-backed workflows, assumptions and reference outputs |
 | `docs/` | Sphinx configuration, guides and API reference |
 | `tests/` | Physical reference cases, integration checks and plot verification |
 
@@ -51,7 +52,7 @@ Deployment permissions are limited to the deployment job: `pages: write` and
 python -m pip install -e '.[dev,plots,docs]'
 ruff check .
 ruff format --check .
-ty check src use_cases
+ty check src use_cases analysis
 pytest --cov=x2power --cov-report=term-missing
 sphinx-build -W --keep-going -b html docs docs/_build/html
 ```

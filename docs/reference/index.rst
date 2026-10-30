@@ -13,6 +13,8 @@ units are explicit in field and argument names.
    scenarios
    profiles
    biogas_plants
+   bmp
+   cost_benefit
    experiments
    utilities
    plotting

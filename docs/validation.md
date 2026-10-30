@@ -45,6 +45,18 @@ release after outages, heating loads and grid import/export accounting. Restarte
 simulations preserve state, and zero-feed cases retain residual gas production.
 These checks establish numerical consistency, not empirical plant performance.
 
+## BMP and financial screening verification
+
+The [banana-residue analysis](tenerife_banana.md) tests the VS-fed BMP conversion,
+separate capture/availability deductions, annual heat/electricity accounting and
+outage imports against independent arithmetic. Financial tests cover year-zero
+costs, discounting, replacement/closure timing, payback, undefined ratios and
+break-even NPV closure. The analysis runner is checked from a different working
+directory, and its committed reference results are compared with a fresh run.
+
+These checks do not validate transferring a laboratory BMP from Gran Canaria to
+Tenerife, a continuous mono-digester, equipment prices or local project economics.
+
 ## Extension boundaries
 
 Detailed reactor kinetics, chemical equilibrium, tar/contaminant handling,

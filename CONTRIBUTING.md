@@ -17,7 +17,7 @@ Run these checks before submitting a pull request:
 ```bash
 ruff check .
 ruff format --check .
-ty check src use_cases
+ty check src use_cases analysis
 pytest --cov=x2power --cov-report=term-missing
 python -m build
 ```
