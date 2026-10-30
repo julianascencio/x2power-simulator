@@ -37,9 +37,10 @@ for source selection, review, testing and scientific validation.
 
 AI-generated code and explanations may contain errors or imperfect interpretations
 of the selected sources. Automated tests establish numerical consistency; they do
-not establish empirical accuracy. Validation is still developing, and all bundled
-scenario and plant parameters are synthetic illustrative inputs, not measured
-equipment performance or values validated by the cited literature.
+not establish empirical accuracy. Validation is still developing. The original
+route scenarios and continuous-plant presets are synthetic illustrative inputs.
+Source-backed analyses separately identify published measurements, assumptions
+and simulated results; cited laboratory data do not validate plant performance.
 
 Trace assumptions through the [model references](models.md),
 [biogas plant references](biogas_plants.md) and
@@ -60,6 +61,10 @@ gas storage, CHP outages, process heat and grid imports/exports.
 **[Plastic to electricity](plastic_to_power.md):** a worked pyrolysis example with
 process heating, auxiliary consumption and generator-capacity sensitivity.
 
+**[Tenerife banana residues](tenerife_banana.md):** source-backed electricity
+screening with separate grid imports/exports, cost-benefit methods and reproducible
+financial sensitivities.
+
 ## What can you simulate?
 
 | Input | Method | Main outputs |
@@ -78,7 +83,7 @@ uncertainty figures.
 ## Explicit assumptions
 
 These are reduced-order, interval-based models with constant efficiencies.
-Bundled inputs are synthetic and require calibration. Negative net electricity is
+Example assumptions require calibration. Negative net electricity is
 retained: it represents an external electrical requirement. The energy residual
 checks the generator boundary, not a complete upstream reactor balance.
 

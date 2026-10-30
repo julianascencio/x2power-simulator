@@ -1,10 +1,11 @@
 Example gallery
 ===============
 
-These self-contained examples execute during every clean documentation build.
-Each page includes the Python source, a rendered figure and downloadable Python
-and Jupyter files. All input values are synthetic and require calibration before
-they can describe particular equipment.
+These examples execute during every clean documentation build. Each page includes
+Python source, rendered figures and downloadable Python and Jupyter files.
+Route and continuous-plant examples use synthetic inputs. The source-backed banana
+analysis separates published observations from engineering and economic assumptions.
+None of these examples establishes measured equipment performance.
 
 Install the plotting extra before running the examples:
 
@@ -12,6 +13,8 @@ Install the plotting extra before running the examples:
 
    python -m pip install -e '.[plots]'
 
-Figures are available as the variable ``figure``. To export a figure from a script
-or notebook, call ``save_figure(figure, "results/example.png")`` from
-``x2power.utilities.plotting``.
+The banana example imports the accompanying ``analysis`` package and pinned input
+file, so run its downloads from a repository checkout. Other examples define their
+inputs in the script. Each script names its figure variables. To export one, call
+``save_figure(figure, "results/example.png")`` from ``x2power.utilities.plotting``,
+substituting the appropriate figure variable.

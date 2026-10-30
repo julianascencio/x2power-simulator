@@ -23,8 +23,9 @@ auxiliary consumption and capacity constraints using explicit energy balances.
 
 The simulation core has **no runtime dependencies** and requires **Python 3.11 or newer**.
 Install the optional `plots` extra for Matplotlib figures.
-Models are reduced-order, interval-based calculations. All bundled scenario inputs
-are synthetic examples, not measured equipment performance.
+Models are reduced-order, interval-based calculations. Route scenarios and plant
+presets are synthetic examples. Source-backed analyses distinguish published data
+from assumptions and simulated equipment performance.
 
 **[Documentation](https://julianascencio.github.io/x2power-simulator/)** ·
 [Example gallery](https://julianascencio.github.io/x2power-simulator/gallery/index.html) ·
@@ -43,9 +44,10 @@ for source selection, review, testing and scientific validation.
 
 AI-generated code and explanations may contain errors or imperfect interpretations
 of the selected sources. Automated tests establish numerical consistency; they do
-not establish empirical accuracy. Validation is still developing, and all bundled
-scenario and plant parameters are synthetic illustrative inputs, not measured
-equipment performance or values validated by the cited literature.
+not establish empirical accuracy. Validation is still developing. The original
+route scenarios and continuous-plant presets are synthetic illustrative inputs.
+Source-backed analyses separately identify published measurements, assumptions
+and simulated results; cited laboratory data do not validate plant performance.
 
 Trace assumptions through the [model references](docs/models.md),
 [biogas plant references](docs/biogas_plants.md) and
@@ -125,6 +127,7 @@ fraction only when the available heat matches the required temperature and duty.
 | [`src/x2power/methods/`](src/x2power/methods) | Conversion models, shared generation model and operating profiles |
 | [`src/x2power/utilities/`](src/x2power/utilities) | Validation, unit conversions, JSON/CSV, sweeps and Monte Carlo experiments |
 | [`use_cases/`](use_cases) | Runnable examples, seven route scenarios and three continuous plant configurations |
+| [`analysis/`](analysis) | Reproducible source-backed cases, cost-benefit screening and pinned results |
 | [`tests/`](tests) | Hand-calculated cases, conservation checks, limiting cases and CLI integration |
 | [`docs/`](docs) | Equations, configuration reference, assumptions and validation guidance |
 
@@ -183,6 +186,23 @@ net electricity, grid imports/exports, flaring and heat demand in JSON/CSV.
 See the [plant model and assumptions](docs/biogas_plants.md) and
 [step-by-step gallery](https://julianascencio.github.io/x2power-simulator/gallery/plot_05_biogas_plant.html).
 
+## Source-backed banana-residue analysis
+
+```bash
+python -m analysis.tenerife_banana.run --plot
+```
+
+The Tenerife screening case combines published island context and Gran Canaria
+laboratory pseudostem measurements with explicit engineering and cost assumptions.
+It models 365 daily energy balances, grid imports/exports, NPV, benefit/cost ratio,
+payback, gross LCOE and break-even sensitivities. The baseline is financially
+negative under its stated assumptions; it is not an operating-plant reconstruction.
+
+Reusable financial functions live in `src/x2power/methods/cost_benefit.py`; the
+offline workflow and pinned numeric results are under `analysis/tenerife_banana/`.
+See the [evidence and reproduction guide](docs/tenerife_banana.md) and
+[results gallery](https://julianascencio.github.io/x2power-simulator/gallery/plot_07_tenerife_banana.html).
+
 ## Route model boundaries
 
 - Input masses and volumes are **totals over the simulation interval**, not rates.
@@ -209,7 +229,7 @@ Read [equations and boundaries](docs/models.md), the
 python -m pip install -e '.[dev,plots]'
 ruff check .
 ruff format --check .
-ty check src use_cases
+ty check src use_cases analysis
 pytest --cov=x2power --cov-report=term-missing
 python -m build
 ```
