@@ -1,6 +1,23 @@
 # X2Power Simulator
 
-A Python simulator for converting solid feedstocks, biogas and organic wastewater
+<p align="center">
+  <a href="https://asvaconsulting.com">
+    <img
+      src="https://asvaconsulting.com/wp-content/uploads/2022/05/ASVA-1-1-scaled.jpg"
+      alt="ASVA Consulting"
+      width="280"
+    />
+  </a>
+</p>
+
+<p align="center">
+  <strong>Created by ASVA Consulting</strong><br>
+  <a href="https://asvaconsulting.com">asvaconsulting.com</a><br>
+  <a href="mailto:contacto@asvaconsulting.com">contacto@asvaconsulting.com</a>
+</p>
+
+Created and maintained by **ASVA Consulting**, X2Power is a Python simulator for
+converting solid feedstocks, biogas and organic wastewater
 into electricity. It calculates gross generation, net electricity, process heat,
 auxiliary consumption and capacity constraints using explicit energy balances.
 
@@ -13,12 +30,28 @@ are synthetic examples, not measured equipment performance.
 [Example gallery](https://julianascencio.github.io/x2power-simulator/gallery/index.html) ·
 [API reference](https://julianascencio.github.io/x2power-simulator/reference/index.html)
 
-## AI-generated content
+## AI-assisted development and literature basis
 
-Most of the code, examples and documentation in this repository are AI-generated,
-based on specific, real scientific and technical literature selected by the
-repository developers. The developers guide source selection, implementation,
-review and validation.
+Most of the code, documentation, examples, tests and repository scaffolding are
+**AI-generated under developer direction**, based on real, specifically identified
+scientific and technical literature selected by the repository developers.
+
+Developers choose the references used to define physical assumptions, methods and
+parameter conventions. AI assists with implementation, documentation, testing and
+iteration around that evidence base. Developers and contributors remain responsible
+for source selection, review, testing and scientific validation.
+
+AI-generated code and explanations may contain errors or imperfect interpretations
+of the selected sources. Automated tests establish numerical consistency; they do
+not establish empirical accuracy. Validation is still developing, and all bundled
+scenario and plant parameters are synthetic illustrative inputs, not measured
+equipment performance or values validated by the cited literature.
+
+Trace assumptions through the [model references](docs/models.md),
+[biogas plant references](docs/biogas_plants.md) and
+[plastic example boundaries](docs/plastic_to_power.md). See
+[verification and calibration](docs/validation.md) for the evidence available and
+the checks needed before interpreting results as equipment predictions.
 
 ## Quick start
 
@@ -194,3 +227,11 @@ sphinx-build -W --keep-going -b html docs docs/_build/html
 
 GitHub Actions validates documentation on pull requests and publishes successful
 builds from `main` to GitHub Pages. See [documentation development](docs/development.md).
+
+## Creator and contact
+
+X2Power is owned, created and maintained by **ASVA Consulting**, with contributions
+from the repository developers and contributors.
+
+- Website: [asvaconsulting.com](https://asvaconsulting.com)
+- Contact: [contacto@asvaconsulting.com](mailto:contacto@asvaconsulting.com)

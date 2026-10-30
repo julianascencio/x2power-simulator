@@ -6,6 +6,21 @@
   max-width: 92rem;
 }
 
+.asva-branding {
+  text-align: center;
+  margin: 1.5rem 0 2rem;
+}
+
+.asva-branding img {
+  max-width: 280px;
+  width: 100%;
+  height: auto;
+}
+
+.asva-branding p {
+  margin-top: 0.75rem;
+}
+
 div.highlight-text pre {
   line-height: 1.45;
 }
