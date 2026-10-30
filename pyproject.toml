@@ -8,7 +8,11 @@ version = "0.1.0"
 description = "Transparent feedstock-to-electricity simulation with explicit energy boundaries"
 readme = "README.md"
 requires-python = ">=3.11"
-authors = [{name = "Julian Ascencio Vasquez"}]
+authors = [
+  {name = "ASVA Consulting", email = "contacto@asvaconsulting.com"},
+  {name = "Julian Ascencio Vasquez"},
+]
+maintainers = [{name = "ASVA Consulting", email = "contacto@asvaconsulting.com"}]
 dependencies = []
 classifiers = [
   "Development Status :: 3 - Alpha",
@@ -31,6 +35,7 @@ dev = ["pytest>=8", "pytest-cov>=6", "ruff>=0.11", "ty>=0.0.1", "build>=1.2"]
 x2power = "x2power.cli:main"
 
 [project.urls]
+Homepage = "https://asvaconsulting.com"
 Repository = "https://github.com/julianascencio/x2power-simulator"
 Documentation = "https://julianascencio.github.io/x2power-simulator/"
 

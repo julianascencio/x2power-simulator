@@ -11,8 +11,8 @@ with (ROOT / "pyproject.toml").open("rb") as source:
     metadata = tomllib.load(source)["project"]
 
 project = "X2Power"
-author = "X2Power contributors"
-copyright = "2026, X2Power contributors"
+author = "ASVA Consulting and X2Power contributors"
+copyright = "2026, ASVA Consulting and X2Power contributors"
 release = metadata["version"]
 version = release
 
