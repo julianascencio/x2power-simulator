@@ -1,8 +1,10 @@
 [build-system]
-requires = ["hatchling>=1.26"]
+requires = ["hatchling>=1.27"]
 build-backend = "hatchling.build"
 
 [project]
+license = "LicenseRef-ASVA-Noncommercial-1.0"
+license-files = ["LICENSE", "LICENSING.md"]
 name = "x2power-simulator"
 version = "0.1.0"
 description = "Transparent feedstock-to-electricity simulation with explicit energy boundaries"
