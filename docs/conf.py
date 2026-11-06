@@ -13,7 +13,7 @@ with (ROOT / "pyproject.toml").open("rb") as source:
 
 project = "X2Power"
 author = "ASVA Consulting and X2Power contributors"
-copyright = "2026, ASVA Consulting and X2Power contributors"
+copyright = "2026, ASVA Consulting TFE SL"
 release = metadata["version"]
 version = release
 

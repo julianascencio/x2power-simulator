@@ -99,3 +99,12 @@ gallery/index
 reference/index
 development
 ```
+
+## License
+
+Copyright (c) 2026 ASVA Consulting TFE SL. Original software is source-available
+for noncommercial use only. Commercial use, including internal business use and
+paid services, is prohibited under the
+[project license](https://github.com/julianascencio/x2power-simulator/blob/main/LICENSE).
+Third-party materials retain their own terms; see
+[licensing scope](https://github.com/julianascencio/x2power-simulator/blob/main/LICENSING.md).
